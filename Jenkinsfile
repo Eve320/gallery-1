@@ -13,9 +13,7 @@ pipeline {
             }
         }
    
-    stage('Tests') {
-      echo 'testing'
-    }
+    
 
 }
 }
