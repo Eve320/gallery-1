@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages { 
     stage('clone repository') {
-      git'https://github.com/Eve320/gallery-1.git'
+      steps{
+      git 'https://github.com/Eve320/gallery-1'
+    }
     }
 
     stage('Build') { 
