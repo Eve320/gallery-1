@@ -7,3 +7,4 @@ config.mongoURI = {
     test: 'mongodb+srv://aurora:aurora123@devopscluster.qicqr.mongodb.net/darkroom-test?retryWrites=true&w=majority',
 }
 module.exports = config;
+
