@@ -1,6 +1,8 @@
 pipeline { 
   agent any
   environment {
+    
+      BUILD_URL= "https://sheltered-coast-66520.herokuapp.com/"
 
         EMAIL_BODY = 
 
