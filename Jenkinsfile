@@ -72,7 +72,7 @@ pipeline {
 
 post {
         success {
-          slackSend color: "good", message: "Build successful: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
+          slackSend color: "good", message: "Build successful :man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
             emailext attachLog: true, 
                 body: EMAIL_BODY, 
 
@@ -82,7 +82,7 @@ post {
         }
 
         failure {
-          slackSend color: "danger", message: "Build failed:  \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
+          slackSend color: "danger", message: "Build failed :white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
             emailext attachLog: true, 
                 body: EMAIL_BODY, 
 
