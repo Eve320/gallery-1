@@ -59,15 +59,15 @@ pipeline {
   }
 }
 
-  stage('Publish'){
-    slackSend color: "good", message: "Build successful: man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
+  // stage('Publish'){
+  //   slackSend color: "good", message: "Build successful: man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
   
   
-  catch(error) {
-    slackSend color: "danger", message: "Build failed: white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
+  // catch(error) {
+  //   slackSend color: "danger", message: "Build failed: white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
 
-    throw error
-  }
+  //   throw error
+  // }
   }
     
 
@@ -75,6 +75,7 @@ pipeline {
 
 post {
         success {
+          slackSend color: "good", message: "Build successful: man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
             emailext attachLog: true, 
                 body: EMAIL_BODY, 
 
@@ -84,6 +85,7 @@ post {
         }
 
         failure {
+          slackSend color: "danger", message: "Build failed: white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
             emailext attachLog: true, 
                 body: EMAIL_BODY, 
 
