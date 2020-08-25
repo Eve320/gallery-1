@@ -94,7 +94,7 @@ post {
         }
 
         always {
-          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`(<${env.BUILD_URL}|Open>)"
+          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`(<${env.BUILD_URL}|Open in heroku>)"
         }
     }
 
