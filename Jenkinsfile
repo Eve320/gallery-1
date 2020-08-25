@@ -29,7 +29,7 @@ pipeline {
     }
   stages { 
 
-    stage 'checkout'{
+    stage ('checkout'){
       checkout scm
       slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`\n\n_The changes:_\n${lastChange}"
   }
