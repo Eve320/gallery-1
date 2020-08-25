@@ -61,12 +61,13 @@ pipeline {
 
   stage('Publish'){
     slackSend color: "good", message: "Build successful: man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
-  }
-
-  catch (err) {
+  
+  
+  catch(error) {
     slackSend color: "danger", message: "Build failed: white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
 
-    throw err
+    throw error
+  }
   }
     
 
