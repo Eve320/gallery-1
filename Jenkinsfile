@@ -86,7 +86,7 @@ post {
         }
 
         always {
-          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`"
+          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}` \n `${lastChanges}`"
         }
     }
 
