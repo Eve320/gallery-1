@@ -58,15 +58,7 @@ pipeline {
   }
 }
 
-  // stage('Publish'){
-  //   slackSend color: "good", message: "Build successful: man_dancing: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>) "
-  
-  
-  // catch(error) {
-  //   slackSend color: "danger", message: "Build failed: white_frowning_face: \n`${env.JOB_NAME} ${env.BUILD_NUMBER}` (<${env.BUILD_URL}|Open>)"
 
-  //   throw error
-  // }
   
     
 
@@ -94,7 +86,7 @@ post {
         }
 
         always {
-          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`(<${env.BUILD_URL}|Open in heroku>)"
+          slackSend color: "warning", message: "Started `${env.JOB_NAME} ${env.BUILD_NUMBER}`(<${env.BUILD_URL}\n >)"
         }
     }
 
